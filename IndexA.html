@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmocionArte</title>
+    <link rel="stylesheet" href="styleA.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">EmocionArte</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+        <div class="carrito">
+            <a href="#">🛒</a>
+        </div>
+    </header>
+
+
+
+    <!-- ====== CARRUSEL ====== -->
+        <!-- Agrega esto en <head> si no tienes las fuentes -->
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <!-- Swiper CSS (CDN) -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+        <!-- Sección carrusel -->
+        <section class="hero-carousel">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/1.png" alt="Imagen 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/2.png" alt="Imagen 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/3.png" alt="Imagen 3">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/4.png" alt="Imagen 3">
+            </div>
+            </div>
+
+            <!-- Paginación (puntitos) -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Overlay (texto encima de las imágenes) -->
+        <div class="hero-overlay">
+            <h1>Regala Emociones con Estilo</h1>
+            <p>Descubre el detalle perfecto para cada ocasión</p>
+        </div>
+        </section>
+
+        <!-- Swiper JS (CDN) - al final del body -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Inicialización JS -->
+        <script>
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            loop: true,
+            effect: "fade",
+            fadeEffect: { crossFade: true },
+
+            // AUTOPLAY: cambia delay para acelerar/ralentizar
+            autoplay: {
+            delay: 3000,            // 3000ms = 3s entre slides (ajusta aquí)
+            disableOnInteraction: false,
+            },
+
+            speed: 800,               // duración de la transición (ms). Reducir para transiciones más rápidas
+
+            keyboard: {
+            enabled: true,
+            },
+
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+        });
+        </script>
+
+
+
+    <!-- HERO / CATEGORÍAS -->
+    <section class="categorias">
+        <h2>Regalos para Cada Ocasión</h2>
+        <p>Encuentra el regalo perfecto para cada momento especial de la vida</p>
+        <div class="categorias-grid">
+            <div class="categoria">🎉 Cumpleaños</div>
+            <div class="categoria">❤️ San Valentín</div>
+            <div class="categoria">💍 Amor</div>
+            <div class="categoria">🤝 Amistad</div>
+    
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="productos">
+        <h2>Productos Destacados</h2>
+        <p>Los favoritos de nuestros clientes que nunca fallan</p>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="1.png" alt="Caja Sorpresa Romántica">
+                <h3>Caja Sorpresa Romántica</h3>
+                <p class="precio">$49.900</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="3.png" alt="Set Cumpleaños Deluxe">
+                <h3>Set Cumpleaños Deluxe</h3>
+                <p class="precio">$49.900</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="2.png" alt="Memoria AdivinArte Personalizada">
+                <h3>Memoria AdivinArte Personalizada</h3>
+                <p class="precio">$49.900</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div class="ver-mas">
+            <a href="#">Ver Todos los Productos →</a>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios">
+        <h2>¿Por Qué Elegir EmocionArte?</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio">
+                <h3>>🎁 Regalos con Alma</h3>
+                <p>Cada detalle está pensado para transmitir emociones únicas.</p>
+            </div>
+            <div class="beneficio">
+                <h3>⚡ Entrega Rápida</h3>
+                <p>Recibe tus regalos en tiempo récord, listos para sorprender.</p>
+            </div>
+            <div class="beneficio">
+                <h3>💬 Atención Personal</h3>
+                <p>Nos aseguramos de que cada cliente viva una experiencia única.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonios-grid">
+            <div class="testimonio">
+                <p>“El regalo llegó perfecto, mi pareja quedó encantada. ¡Recomendados!”</p>
+                <span>- María González</span>
+            </div>
+            <div class="testimonio">
+                <p>“Muy buena atención, los regalos se notan hechos con amor.”</p>
+                <span>- Carlos Ruiz</span>
+            </div>
+            <div class="testimonio">
+                <p>“El envío fue rápido y el detalle superó mis expectativas.”</p>
+                <span>- Ana López</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+        <h2>¿Listo para Regalar <span>Emociones</span>?</h2>
+        <p>Descubre nuestra colección completa y encuentra el regalo perfecto que hará sonreír a esa persona especial.</p>
+        <button>Comenzar a Regalar</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">EmocionArte</div>
+            <p>Transformamos momentos especiales en recuerdos inolvidables. Cada regalo tiene una emoción única que compartir.</p>
+            <div class="sociales">
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">TW</a>
+            </div>
+        </div>
+
+        <div class="footer-contacto">
+            <h4>Contacto</h4>
+            <p>Email: contacto@emocionarte.com</p>
+            <p>Tel: +57 300 123 4567</p>
+        </div>
+    </footer>
+
+</body>
+</html>
