@@ -24,7 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
+    padding: 10px 10%;
     background: #fff;
     border-bottom: 1px solid #eee;
     position: sticky;
@@ -54,6 +54,73 @@ nav ul li a {
     font-size: 1.5rem;
     color: #333;
 }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* puedes ajustar */
+  background: url("images/1.png") no-repeat center center/cover; /* tu imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Capa de color encima de la imagen */
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(199, 81, 41, 0.5); /* tu color con transparencia */
+  z-index: 1;
+}
+
+/* Texto */
+.hero .content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero .content h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  margin-bottom: 10px;
+}
+
+.hero .content p {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+}
+
+/* Elimina cualquier clip-path que hayas aplicado directamente a .hero */
+
+/* Triángulos Blancos en los Costados (Zonas B) */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  height: 100px; 
+  background: #fff; 
+
+  clip-path: polygon(
+    0 100%,    
+    0 0,      
+    50% 100%,  
+    100% 100%, 
+    100% 0,    
+    50% 100%   
+  );
+  
+  z-index: 3;
+}
+
+
+
 
 /* ===== SECCIÓN CATEGORÍAS ===== */
 .categorias {
@@ -284,16 +351,21 @@ nav ul li a {
 /* ===== FOOTER ===== */
 footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;   /* Centra horizontalmente */
+    align-items: center;       /* Centra verticalmente (si los hijos tienen altura) */
     flex-wrap: wrap;
     padding: 40px 10%;
     background: #333;
     color: #fff;
+    text-align: center;        /* Centra texto dentro de los hijos */
 }
 
+
+
 footer h4 {
-    margin-bottom: 15px;
-    color: #fbe6d1;
+    font-family: "Dancing Script", cursive;
+    color: #c75129;
+    font-size: 200%;
 }
 
 footer a {
@@ -302,111 +374,21 @@ footer a {
     transition: 0.3s;
 }
 
-footer a:hover {
-    color: #fff;
+
+/* Icons */
+
+ul.icons {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
 }
 
-.footer-content {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 20px;
-}
-
-.footer-links, .footer-contacto {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
-}
-
-.sociales a {
-    margin-right: 10px;
-}
+	ul.icons li {
+		display: inline-block;
+		height: 2.5em;
+		line-height: 2.5em;
+		padding: 0 0.5em;
+	}
 
 
-/* ===== CARROUSEL ===== */
-
-/* Carrusel: estilos */
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  height: 70vh;               /* ocupa casi toda la pantalla inicial */
-  overflow: hidden;
-  font-family: "Poppins", sans-serif;
-}
-
-/* Ajuste del contenedor Swiper */
-.mySwiper {
-  width: 100%;
-  height: 100%;
-}
-
-/* Cada slide debe ocupar todo el espacio */
-.mySwiper .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-/* Imágenes: cubrir todo sin deformar */
-.mySwiper .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Overlay (texto encima): semitransparente */
-.hero-overlay {
-  position: absolute;
-  inset: 0;                    /* top:0; right:0; bottom:0; left:0; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 20;
-  pointer-events: none;        /* para que no bloquee clicks si hubiera */
-  background: rgba(199, 81, 41, 0.28); /* color semitransparente (usa el tono de la paleta) */
-  backdrop-filter: blur(2px);
-  color: #fff;
-  padding: 0 20px;
-}
-
-/* Título con Dancing Script */
-.hero-overlay h1 {
-  font-family: "Dancing Script", cursive;
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  margin: 0 0 10px 0;
-  letter-spacing: 0.5px;
-}
-
-/* Subtítulo */
-.hero-overlay p {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(1rem, 1.6vw, 1.4rem);
-  margin: 0;
-}
-
-/* Paginación (puntitos) - personalización */
-.swiper-pagination {
-  z-index: 30;
-  bottom: 18px !important;
-}
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.6);
-  opacity: 1;
-  transition: all .3s;
-}
-.swiper-pagination-bullet-active {
-  background: #fff;
-  transform: scale(1.2);
-}
-
-/* Responsive: en pantallas pequeñas reduce la altura */
-@media (max-width: 768px) {
-  .hero-carousel { height: 65vh; }
-  .hero-overlay h1 { font-size: 2.2rem; }
-}
+    
